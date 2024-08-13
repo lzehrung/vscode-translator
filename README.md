@@ -4,9 +4,23 @@ Translate text selections using GPT-4o (bring your own API key).
 
 ## Features
 
-highlight text -> translate
+- highlight text -> translate
+- detects case (ie. camelCase) and splits by word
 
-change output language codes
+## Settings
+
+```json
+"translateText.apiKey": {
+  "type": "string",
+  "default": "",
+  "description": "An OpenAI API key."
+},
+"translateText.outputLanguage": {
+  "type": "string",
+  "default": "",
+  "description": "Translate to this language."
+}
+```
 
 ## Development
 
