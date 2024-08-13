@@ -1,0 +1,67 @@
+{
+  "name": "vscode-translator",
+  "displayName": "vscode-translator",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.translateHighlightedText"
+  ],
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "package": "vsce package",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.92.0",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.11.0",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0",
+    "eslint": "^8.57.0",
+    "generator-code": "^1.11.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4",
+    "vsce": "^2.15.0",
+    "yo": "^5.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.7.3"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.translateText",
+        "title": "Translate Text"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Translate Text - Settings",
+      "properties": {
+        "translateText.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "An OpenAI API key."
+        },
+        "translateText.outputLanguage": {
+          "type": "string",
+          "default": "",
+          "description": "Translate to this language."
+        }
+      }
+    }
+  }
+}
