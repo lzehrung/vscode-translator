@@ -43,13 +43,13 @@
   "contributes": {
     "commands": [
       {
-        "command": "extension.translateText",
-        "title": "Translate Text"
+        "command": "extension.translateSelectedText",
+        "title": "Translate Selected Text"
       }
     ],
     "configuration": {
       "type": "object",
-      "title": "Translate Text - Settings",
+      "title": "Translate Selected Text - Settings",
       "properties": {
         "translateText.apiKey": {
           "type": "string",
@@ -59,7 +59,7 @@
         "translateText.outputLanguage": {
           "type": "string",
           "default": "",
-          "description": "Translate to this language."
+          "description": "The language to translate the text to."
         }
       }
     }

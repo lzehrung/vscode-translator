@@ -1,6 +1,14 @@
-# vscode-translator README
+# Translate Highlighted Text (vscode-translator)
 
-Translate text selections using GPT-4o (bring your own API key).
+Simple extension to translate text selected/highlighted in VSCode using `gpt-4o-mini`.
+
+Will split names from code selections by case and translate the resulting phrase: `isFeatureEnabled` => `is feature enabled`.
+
+## Usage
+
+- highlight/select code/text
+- `ctrl+shift+p` -> `Translate Selected Text`
+- a notification will appear in the bottom right with the translated text
 
 ## Features
 
